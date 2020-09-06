@@ -6,22 +6,22 @@ public class calculator {
         Scanner sc = new Scanner(System.in);
 
         while (calculator) {
-            System.out.print("Enter a number: ");
+            System.out.print("Enter a number: "); // First input
             
-            while(!sc.hasNextDouble()){ // Prevents crashes from letters
+            while(!sc.hasNextDouble()){ // If first input fails, run this til valid input
                 System.out.println("Invalid input");
                 System.out.println("Enter a number: ");
                 sc.next();
             }
-            Double number1 = sc.nextDouble();
-            System.out.print("Enter another number: ");
+            Double number1 = sc.nextDouble(); // First input
+            System.out.print("Enter another number: "); // Second input
 
-            while(!sc.hasNextDouble()){ // ""
+            while(!sc.hasNextDouble()){ // If second input fails, run this til valid input
                 System.out.println("Invalid input");
                 System.out.println("Enter another number: ");
                 sc.next();
             } 
-            Double number2 = sc.nextDouble();
+            Double number2 = sc.nextDouble(); // Second input
 
             System.out.println("Would you like to: ");
             System.out.println("[1] Add your numbers.");
