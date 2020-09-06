@@ -31,7 +31,7 @@ public class calculator {
             System.out.println("[5] Exit calculator. ");
             System.out.print("Option: "); 
             String input = sc.next();
-            double sum = 0.0;
+            double sum;
             switch(input) {
                 case "1":
                     sum = addition(number1, number2);
