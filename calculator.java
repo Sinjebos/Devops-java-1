@@ -6,17 +6,17 @@ public class calculator {
         Scanner sc = new Scanner(System.in);
 
         while (calculator) {
-            System.out.print("Enter a number: "); // First input
+            System.out.print("Enter a number: "); // first input
             
-            while(!sc.hasNextDouble()){ // If first input fails, run this til valid input
+            while(!sc.hasNextDouble()){ // Prevents crashes from letters
                 System.out.println("Invalid input");
                 System.out.println("Enter a number: ");
                 sc.next();
             }
             double number1 = sc.nextDouble();
-            System.out.print("Enter another number: "); // Second input
+            System.out.print("Enter another number: "); // second input
 
-            while(!sc.hasNextDouble()){ // If second input fails, run this til valid input
+            while(!sc.hasNextDouble()){ // ""
                 System.out.println("Invalid input");
                 System.out.println("Enter another number: ");
                 sc.next();
@@ -35,19 +35,19 @@ public class calculator {
             switch(input) {
                 case "1":
                     sum = addition(number1, number2);
-                    System.out.println(sum);
+                    System.out.println(number1 + " + " + number2 + " = " + sum);
                     break;
                 case "2":
                       sum = subtract(number1, number2);
-                      System.out.println(sum);
+                      System.out.println(number1 + " - " + number2 + " = " + sum);
                       break;
                 case "3":
                       sum = multiply(number1, number2);
-                      System.out.println(sum);
+                      System.out.println(number1 + " * " + number2 + " = " + sum);
                       break;
                 case "4":
                       sum = divide(number1, number2);
-                      System.out.println(sum);
+                      System.out.println(number1 + " / " + number2 + " = " + sum);
                       break;      
 
                 case "5":
