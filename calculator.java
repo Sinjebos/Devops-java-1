@@ -13,7 +13,7 @@ public class calculator {
                 System.out.println("Enter a number: ");
                 sc.next();
             }
-            Double number1 = sc.nextDouble();
+            double number1 = sc.nextDouble();
             System.out.print("Enter another number: "); // Second input
 
             while(!sc.hasNextDouble()){ // If second input fails, run this til valid input
@@ -21,7 +21,7 @@ public class calculator {
                 System.out.println("Enter another number: ");
                 sc.next();
             } 
-            Double number2 = sc.nextDouble();
+            double number2 = sc.nextDouble();
 
             System.out.println("Would you like to: ");
             System.out.println("[1] Add your numbers.");
@@ -31,7 +31,7 @@ public class calculator {
             System.out.println("[5] Exit calculator. ");
             System.out.print("Option: "); 
             String input = sc.next();
-            Double sum = 0.0;
+            double sum = 0.0;
             switch(input) {
                 case "1":
                     sum = addition(number1, number2);
@@ -62,16 +62,16 @@ public class calculator {
         }
          sc.close();
     }
-    public static Double addition(Double number1, Double number2) {
+    public static double addition(double number1, double number2) {
         return number1 + number2;
     }
-    public static Double subtract(Double number1, Double number2) {
+    public static double subtract(double number1, double number2) {
         return number1 - number2;
     }
-    public static Double multiply(Double number1, Double number2) {
+    public static double multiply(double number1, double number2) {
         return number1 * number2;
     }
-    public static Double divide(Double number1, Double number2) {
+    public static double divide(double number1, double number2) {
         return number1 / number2; 
     }
 }
