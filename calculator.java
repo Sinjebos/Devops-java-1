@@ -6,7 +6,7 @@ public class calculator {
         Scanner sc = new Scanner(System.in);
 
         while (calculator) {
-            System.out.print("Enter a number: "); // First input
+            System.out.print("Enter a number: ");
             
             while(!sc.hasNextDouble()){ // If first input fails, run this til valid input
                 System.out.println("Invalid input");
@@ -14,7 +14,7 @@ public class calculator {
                 sc.next();
             }
             Double number1 = sc.nextDouble(); // First input
-            System.out.print("Enter another number: "); // Second input
+            System.out.print("Enter another number: ");
 
             while(!sc.hasNextDouble()){ // If second input fails, run this til valid input
                 System.out.println("Invalid input");
