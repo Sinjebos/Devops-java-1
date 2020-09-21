@@ -1,0 +1,102 @@
+public class Searchengine {
+    static boolean weaponequipment1 = false;
+    static boolean weaponequipment2 = false;
+    static boolean weaponequipment3 = false;
+    static boolean weaponequipment4 = false;
+
+    static void searchForWeapon(String weapon){
+        switch(weapon) {
+            case "Gorehowl":
+            if(weaponequipment1){ // Looks if equipWeaponto method is true specific to this case
+                System.out.println("Garrosh no longer holds Gorehowl, Garrosh now holds Excalibur");
+            }
+            else{
+            System.out.println(weapon + " was found and have 70 on-hit dmg and is worn by Garrosh!");
+            }
+            break;
+
+            case "Ashbringer": 
+            if(weaponequipment2){ // Looks if equipWeaponto method is true specific to this case
+                System.out.println("Tirion threw away Excalibur, Tirion holds " + weapon + " !");
+            }
+            else{
+            System.out.println(weapon + " was found and have 85 on-hit dmg and is worn by Tirion!");
+            }
+            break;
+
+            case "Frostmourne": 
+            if(weaponequipment3){ // Looks if equipWeaponto method is true specific to this case
+            System.out.println("Arthas shattered Excalibur, Arthas holds " + weapon);
+            }
+            else{
+                System.out.println( weapon + "was found and have 100 on-hit dmg and is worn by Arthas!");
+            }
+            break;
+
+            case "Doomhammer":
+            if(weaponequipment4){ // Looks if equipWeaponto method is true specific to this case
+            System.out.println("Thrall holds Excalibur!");
+            }
+            else{
+                System.out.println(weapon + "was found and have 115 on-hit dmg and is worn by Thrall!");
+            }
+            break;
+
+            case "Excalibur": /* Does same thing as all the "if" statements */
+            if(weaponequipment1){
+                System.out.println("Garrosh holds Excalibur");
+            }
+            if(weaponequipment2){
+                System.out.println("Tirion threw away Excalibur");
+            }
+            if(weaponequipment3){
+                System.out.println("Arthas shattered Excalibur");
+            }
+            if(weaponequipment4){
+                System.out.println("Thrall holds Excalibur");
+            }
+            if(!weaponequipment1 && !weaponequipment2 && !weaponequipment3 && !weaponequipment4){
+                System.out.println("Legendary Excalibur is not equipped to anyone");
+            }
+            break;
+
+            default:
+            System.out.println(weapon+ " does not exist!");
+            break;
+        }
+        }
+
+            static void equipExcaliburTo(String characterName){
+            switch(characterName) {
+                case "Garrosh":
+                    weaponequipment1 = true; // if true, character holds Excalibur til false
+                    System.out.println(characterName + " is now equipped with Excalibur, wow!");
+                break;
+    
+                case "Tirion":
+                    weaponequipment2 = true;
+                    System.out.println(characterName + " see's Excalibur and throws it away, Ashbringer forever!");
+                break;
+    
+                case "Arthas":
+                    weaponequipment3 = true;
+                    System.out.println(characterName + " shatters Excalibur with Frostmourne!");
+                break;
+    
+                case "Thrall":
+                    weaponequipment4 = true;
+                    System.out.println(characterName + " see's shiny object and equips it");
+                break;
+
+                default:
+                    System.out.println(characterName + " does not exist!");
+                    break;
+            }
+
+    }
+    public static void main(String[] args) {       
+        equipExcaliburTo("Valfri karaktär"); // Character you can equip it to: Garrosh - Tirion - Arthas - Thrall.
+        searchForWeapon("valfritt vapen"); // Weapons you can search for: Gorehowl - Ashbringer - Frostmourne - Doomhammer - Excalibur.
+    }
+    
+}
