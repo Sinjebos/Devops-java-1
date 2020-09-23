@@ -1,102 +1,86 @@
-public class test{
-    static String hasExcalibur;
-    static boolean weaponequipment2 = false;
-    static boolean weaponequipment3 = false;
-    static boolean weaponequipment4 = false;
+import java.util.Scanner;
+public class Test {
+   static double number1;
+   static double number2;
 
-    static void searchForWeapon(String weapon){
-        switch(weapon) {
-            case "Gorehowl":
-            if(hasExcalibur == "Gorehowl"){ // Looks if equipWeaponto method is true specific to this case
-                System.out.println("Garrosh no longer holds Gorehowl, Garrosh now holds Excalibur");
-            }
-            else{
-            System.out.println(weapon + " was found and have 70 on-hit dmg and is worn by Garrosh!");
-            }
-            break;
+    public static void main(String[] args) {
+        boolean calculator = true;
+        Scanner sc = new Scanner(System.in);
 
-            case "Ashbringer": 
-            if(hasExcalibur == "Ashbringer"){ // Looks if equipWeaponto method is true specific to this case
-                System.out.println("Tirion threw away Excalibur, Tirion holds " + weapon + " !");
+        while (calculator) {
+            
+            while(!sc.hasNextDouble()){
+            try{
+                System.out.print("Enter a numberrr: ");
+                number1 = sc.nextDouble();
+                sc.next();
             }
-            else{
-            System.out.println(weapon + " was found and have 85 on-hit dmg and is worn by Tirion!");
+            catch(Exception e){
+                System.err.println("You must enter a number! " + e);
+                sc.next();
             }
-            break;
-
-            case "Frostmourne": 
-            if(hasExcalibur == "Frostmourne"){ // Looks if equipWeaponto method is true specific to this case
-            System.out.println("Arthas shattered Excalibur, Arthas holds " + weapon);
-            }
-            else{
-                System.out.println( weapon + "was found and have 100 on-hit dmg and is worn by Arthas!");
-            }
-            break;
-
-            case "Doomhammer":
-            if(hasExcalibur == "Doomhammer"){ // Looks if equipWeaponto method is true specific to this case
-            System.out.println("Thrall holds Excalibur!");
-            }
-            else{
-                System.out.println(weapon + "was found and have 115 on-hit dmg and is worn by Thrall!");
-            }
-            break;
-
-            case "Excalibur": /* Does same thing as all the "if" statements */
-            if(hasExcalibur == "Gorehowl"){
-                System.out.println("Garrosh holds Excalibur");
-            }
-            if(hasExcalibur == "Ashbringer"){
-                System.out.println("Tirion threw away Excalibur");
-            }
-            if(hasExcalibur == "Frostmourne"){
-                System.out.println("Arthas shattered Excalibur");
-            }
-            if(hasExcalibur == "Doomhammer"){
-                System.out.println("Thrall holds Excalibur");
-            }
-            if(hasExcalibur == "Gorehowl" && hasExcalibur == "Ashbringer" && hasExcalibur == "Frostmourne" && hasExcalibur == "Doomhammer"){
-                System.out.println("Legendary Excalibur is not equipped to anyone");
-            }
-            break;
-
-            default:
-            System.out.println(weapon+ " does not exist!");
-            break;
         }
-        }
+        while(!sc.hasNextDouble()){
+            try{
+                System.out.println("Enter another number: ");
+                number2 = sc.nextDouble();
+                sc.next();
+             }
+             catch(Exception e){
+                 System.err.println("You messed up bad.. ");
+                 sc.next();
+             }
+            }
 
-            static void equipExcaliburTo(String characterName){
-            switch(characterName) {
-                case "Garrosh":
-                    hasExcalibur = characterName; // if true, character holds Excalibur til false
-                    System.out.println(characterName + " is now equipped with Excalibur, wow!");
-                break;
-    
-                case "Tirion":
-                    hasExcalibur = characterName;
-                    System.out.println(characterName + " see's Excalibur and throws it away, Ashbringer forever!");
-                break;
-    
-                case "Arthas":
-                    hasExcalibur = characterName;  
-                    System.out.println(characterName + " shatters Excalibur with Frostmourne!");
-                break;
-    
-                case "Thrall":
-                    hasExcalibur = characterName;
-                    System.out.println(characterName + " see's shiny object and equips it");
-                break;
-
-                default:
-                    System.out.println(characterName + " does not exist!");
+            System.out.println("Would you like to: ");
+            System.out.println("[1] Add your numbers.");
+            System.out.println("[2] Subtract your numbers.");
+            System.out.println("[3] Multiply your numbers.");
+            System.out.println("[4] Divide your numbers. ");
+            System.out.println("[5] Exit calculator. ");
+            System.out.print("Option: "); 
+            String input = sc.next();
+            double sum;
+            switch(input) {
+                case "1":
+                    sum = addition(number1, number2);
+                    System.out.println(number1 + " + " + number2 + " = " + sum);
                     break;
+                case "2":
+                      sum = subtract(number1, number2);
+                      System.out.println(number1 + " - " + number2 + " = " + sum);
+                      break;
+                case "3":
+                      sum = multiply(number1, number2);
+                      System.out.println(number1 + " * " + number2 + " = " + sum);
+                      break;
+                case "4":
+                      sum = divide(number1, number2);
+                      System.out.println(number1 + " / " + number2 + " = " + sum);
+                      break;      
+
+                case "5":
+                      calculator = false;
+                      System.out.println("Closing calculator. ");
+                      break;
+                default:
+                System.out.println("Please input 1-5!");
+                break;       
             }
 
+        }
+         sc.close();
     }
-    public static void main(String[] args) {       
-        equipExcaliburTo("Garrosh"); // Character you can equip it to: Garrosh - Tirion - Arthas - Thrall.
-        searchForWeapon("Gorehowl"); // Weapons you can search for: Gorehowl - Ashbringer - Frostmourne - Doomhammer - Excalibur.
+    public static double addition(double number1, double number2) {
+        return number1 + number2;
     }
-    
+    public static double subtract(double number1, double number2) {
+        return number1 - number2;
+    }
+    public static double multiply(double number1, double number2) {
+        return number1 * number2;
+    }
+    public static double divide(double number1, double number2) {
+        return number1 / number2; 
+    }
 }
