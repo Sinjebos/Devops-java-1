@@ -1,0 +1,87 @@
+import java.util.Scanner;
+public class groupwork {
+
+public static void main(String[] args) {
+    notGoingToParty();
+}
+public static void notGoingToParty(){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Svara i telefon, [1] ja, [2] nej");
+    String val1 = sc.next();
+    switch(val1){
+        case "1":
+        Goingtoparty();
+        break;
+
+        case "2":
+        System.out.println("Du får sms av din respektive som undrar om förslag för kvällens planer");
+        System.out.println("[1] Gå ut på dejt med restaurang och bio besök.");
+        System.out.println("[2] Du går och fixar kaffe och hör att det knackar på dörren.");
+        notGoingToParty1();
+        break;
+
+        default:
+        System.out.println("välj mellan 1 eller 2");
+        break;
+        }
+    } 
+
+    public static void notGoingToParty1(){
+        Scanner sc = new Scanner(System.in);
+        String val2 = sc.next();
+        switch(val2){
+            case "1":
+            System.out.println("Ni bestämmer er för att gå ut på dejt");
+            System.out.println("Du går och fixar kaffe och hör att det knackar på dörren");
+            System.out.println("[1] Öppna dörren och se vem det är");
+            System.out.println("[2] Ignorera och drick upp kaffet");
+            notGoingToParty2();
+                break;
+
+            case "2":
+            System.out.println("Ni bestämmer er för ha en hemma kväll");
+            System.out.println("Du går upp för att ta en dusch och hör att det knackar på dörren");
+            System.out.println("[1] Gå ur duschen och öppna dörren");
+            System.out.println("[2] Ignorera och duscha färdigt");
+                break;
+
+            default: 
+            System.out.println("Välj mellan 1 eller 2");
+    }
+}
+    public static void notGoingToParty2(){
+        Scanner sc = new Scanner(System.in);
+        String val3 = sc.next();
+        switch(val3){
+            case "1":
+            System.out.println("Du öppnar dörren och det är din respektive som kom direkt");
+            System.out.println("Ni förbereder er för att gå ut på eran dejt kväll");
+            System.out.println("Ni gick ut på restaurangen och bion och båda fick corona och dog");
+            break;
+
+            case "2":
+            System.out.println("Knackandet blir bara mer så du går och öppnar dörren varav din respektive står förbannad över att du inte öppna");
+            System.out.println("Ni bestämmer er för att skita i dejt kvällen och ses en annan dag");
+            System.out.println("Din respektive hade corona och du blev smittad och dog");
+            break;
+
+            default:
+            System.out.println("Välj mellan 1 och 2");
+            break;
+
+        }
+
+    }
+    public static void notGoingToParty3(){
+        Scanner sc = new Scanner(System.in);
+        String val4 = sc.next();
+        switch(val4){
+            case "1":
+            
+            break;
+            
+            case "2":
+            break;
+
+            default:
+            break;
